@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Header} from 'semantic-ui-react'
 import SearchInput from './components/SearchInput';
 import ResultList from './components/ResultList';
 import useDebounce from '../hooks/useDebounce';
@@ -22,7 +23,6 @@ const SearchPage = () => {
         console.log(error)
       }
       const {results} = await response.json();
-      console.log(results)
 
       setSearchResults(results);
       setIsSearching(false);
@@ -33,14 +33,12 @@ const SearchPage = () => {
 
   return (
     <div>
-      <header className="App-header">
-        <p>
-          Welcome to Search Pups
-        </p>
-      </header>
-      <SearchInput updateSearchTerm={updateSearchTerm} setIsSearching={setIsSearching}/>
+      <Header as="h2" textAlign='center'>
+        <Header.Content>Welcome to Recipes</Header.Content>
+        <SearchInput updateSearchTerm={updateSearchTerm} isSearching={isSearching} setIsSearching={setIsSearching}/>
+      </Header>
+
       <ResultList searchResults={searchResults} />
-      {/* {isSearching ? <div>Searching</div> : <ResultList searchResults={searchResults} />} */}
     </div>
   );
 }

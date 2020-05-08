@@ -1,14 +1,14 @@
 import React from 'react';
 import SearchPage from './screens/SearchPage'
 import logo from './logo.svg';
+import {Container} from 'semantic-ui-react';
 // import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <SearchPage/>
-
-    </div>
+    </Container>
   );
 }
 

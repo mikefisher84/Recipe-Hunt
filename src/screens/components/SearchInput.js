@@ -1,9 +1,10 @@
 import React from 'react';
+import {Input} from 'semantic-ui-react';
 
-const SearchInput = ({updateSearchTerm}) => {
+const SearchInput = ({updateSearchTerm, isSearching}) => {
   return (
     <div>
-      <input type="text" placeholder="what kind of recipe do you want?" onChange={(e) => updateSearchTerm(e.target.value)} />
+      <Input loading={isSearching} type="text" placeholder="What would you like?" onChange={(e) => updateSearchTerm(e.target.value)} />
     </div>
   );
 }
